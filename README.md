@@ -12,12 +12,12 @@
 2. ConstraintLayout
 
 <h5>Charger une ressource de mise en page par référence dans le code de l'application</h5>
-<code>
+<pre>
 public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main_layout);
 }
-</code>
+</pre>
 
 
 <h5>Les attributs</h5>
@@ -33,9 +33,9 @@ android:id="@android:id/empty"
 
 <h5>Créer une instance d'une vue/widget à partir de son identifiant</h5>
 <b>onCreate</b>
-<code>
+<pre>
 Button myButton = (Button) findViewById(R.id.my_button);
-</code>
+</pre>
 
 
 <h5>Paramètres de mise page</h5>
@@ -132,21 +132,21 @@ listView.setAdapter(adapter);
 
 Récupération de données dans l'Adapteur: <br/>
 
-<code>
+<pre>
 String[] fromColumns = {ContactsContract.Data.DISPLAY_NAME,
                         ContactsContract.CommonDataKinds.Phone.NUMBER};
 int[] toViews = {R.id.display_name, R.id.phone_number};
-</code>
+</pre>
 
 
 Appel de l'adapteur dans la ListView <br/>
 
-<code>
+<pre>
 SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
         R.layout.person_name_and_number, cursor, fromColumns, toViews, 0);
 ListView listView = getListView();
 listView.setAdapter(adapter);
-</code>
+</pre>
 
 <p>NB: <b>Si, au cours de la vie de votre application, vous modifiez les données sous-jacentes lues par votre adaptateur, vous devez appeler notifyDataSetChanged(). Cela informera la vue jointe que les données ont été modifiées et qu'elle devrait se rafraîchir.</b></p>
 
