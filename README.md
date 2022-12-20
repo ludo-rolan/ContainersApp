@@ -1,7 +1,7 @@
 # Containers App
 
 <h4>Hiérarchie des vues ou widgets</h4>
-<img src="screenshots/Hiérarchie des vues.png"/>
+<img src="screenshots/Hiérarchie_des_vues.png"/>
 
 <h5>Exemples de View:</h5>
 1. Button <br/>
@@ -39,7 +39,7 @@ Button myButton = (Button) findViewById(R.id.my_button);
 
 
 <h5>Paramètres de mise page</h5>
-<img src="screenshots/paramètres\ de\ mise\ en\ page" />
+<img src="screenshots/paramètres_de_mise_en_page" />
 
 
 <h5>Utiliser les mesures relatives</h5>
@@ -76,7 +76,7 @@ l'appel getRight() est similaire au calcul suivant : getLeft() + getWidth().</p>
 
 <h5>Dispositions communes</h5>
 <p>NB: <b>Une hiérarchie de vue large est préférable à une hiérarchie de vue profonde</b>.</p>
-<img src="screenshots/disposition\ communes.png">
+<img src="screenshots/disposition_communes.png">
 
 
 <h5>Construire des mises en page avec un adaptateur</h5>
@@ -87,7 +87,7 @@ AdapterView classe utilise un Adapter pour lier des données à sa mise en page.
 Le Adapter se comporte comme un intermédiaire entre la source de données et la AdapterView mise en page : 
 le Adapter récupère les données (à partir d'une source telle qu'un tableau ou 
 une requête de base de données) et convertit chaque entrée en une vue qui peut être ajoutée à la mise en AdapterView page.</p>
-<img src="screenshoots/mise\ en\ page\ et\ adapteur.png" />
+<img src="screenshoots/mise_en_page_et_adapteur.png" />
 
 
 <h5>Remplir une vue d'adapteur avec des données</h5>
