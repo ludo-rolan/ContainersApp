@@ -39,7 +39,7 @@ Button myButton = (Button) findViewById(R.id.my_button);
 
 
 <h5>Paramètres de mise page</h5>
-<img src="screenshots/paramètres_de_mise_en_page" />
+<img src="screenshots/paramètres_de_mise_en_page.png" />
 
 
 <h5>Utiliser les mesures relatives</h5>
