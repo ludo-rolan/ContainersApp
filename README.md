@@ -107,7 +107,7 @@ qui représente chaque entrée de données.
 Dans l'adapteur: <br/>
 
 <pre>
-ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+ArrayAdapter< String > adapter = new ArrayAdapter< String >(this,
         android.R.layout.simple_list_item_1, myStringArray);
 </pre>
 
