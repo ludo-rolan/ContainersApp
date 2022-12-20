@@ -87,7 +87,7 @@ AdapterView classe utilise un Adapter pour lier des données à sa mise en page.
 Le Adapter se comporte comme un intermédiaire entre la source de données et la AdapterView mise en page : 
 le Adapter récupère les données (à partir d'une source telle qu'un tableau ou 
 une requête de base de données) et convertit chaque entrée en une vue qui peut être ajoutée à la mise en AdapterView page.</p>
-<img src="screenshoots/mise_en_page_et_adapteur.png" />
+<img src="screenshots/mise_en_page_et_adapteur.png" />
 
 
 <h5>Remplir une vue d'adapteur avec des données</h5>
