@@ -1,17 +1,289 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--    xmlns:android="http://schemas.android.com/apk/res/android" is a namespace-->
+<!--    avoid using the same namespace in child layouts views/widgets-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal"
+    android:background="@color/white">
 
-    <TextView android:id="@+id/text"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:text="Hello, I am a TextView" />
-
-    <Button android:id="@+id/button"
-            android:layout_width="wrap_content"
+<!--    some layouts might not have content assist for android:orientation doesn't mean that it isn't available -->
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginRight="10dp">
+    <!--    layout_width && layout_height && orientation are mandatory for layouts-->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Hello, I am a Button" />
+            android:orientation="horizontal"
+            android:padding="50dp">
+
+    <!--        @+id/ stands for an id which doesn't exist-->
+            <TextView android:id="@+id/text1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello, I am a TextView"
+                android:layout_gravity="bottom"/>
+
+    <!--        child views/widgets and layouts can be positioned in a LinearLayout width layout_gravity, padding, and margin properties-->
+            <Button android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello, I am a Button"
+                android:textSize="10px"
+                android:layout_gravity="top"/>
+
+        </LinearLayout>
+
+    <!--    there are two values for layout_orientation in LinearLayout && RelativeLayout: vertical or horizontal-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello, I am a TextView" />
+
+            <Button android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello, I am a Button"
+                android:layout_gravity="end" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical">
+
+            <TextView android:id="@+id/text3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello TextView 3" />
+
+    <!--        In a relative_layout child views/widgets are positioned base either on another views/widgets or the parent layout-->
+    <!--        @id/ stands for an id which already exist-->
+    <!--        toRightOf is used to place the current view/widget to the right of the view with the id specified-->
+            <Button android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bouton 3"
+                android:layout_toRightOf="@id/text3"
+                android:layout_marginLeft="40dp" />
+
+    <!--        there is not sth like toBottomOf to place a view below another. use below instead-->
+    <!--        same like toTopOf that doesn't exist. instead, use above-->
+    <!--        others are alignTop, alignBottom, alignLeft, alignRight, alignBaseLine-->
+            <Button android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bouton 4"
+                android:layout_below="@id/text3"
+                android:layout_marginTop="30dp"/>
+
+    <!--        layout_centerInParent(true/false) allow to center a view/widgets or layout horizontally and vertically in a relative layout parent-->
+    <!--        also to position base on a parent relative layout we can use the properties: alignParentTop, alignParentBottom, alignParentLeft,-->
+    <!--        alignParentRight, centerHorizontal-->
+            <TextView android:id="@+id/text4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hello TextView 4 center in the relative layout"
+                android:layout_centerInParent="true"/>
+
+        </RelativeLayout>
+
+
+<!--        table layout need table row elements inside to properly display the views-->
+<!--        a table row can contain many views/widgets-->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:padding="5dp">
+
+            <TableRow>
+
+                <TextView android:id="@+id/text5"
+                    android:text="Text 5"/>
+
+                <EditText android:id="@+id/edittext1"/>
+
+            </TableRow>
+
+            <TableRow>
+
+                <Button android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="start"/>
+
+                <Button android:id="@+id/button6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="button"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"/>
+
+                <Button android:id="@+id/button7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="end"/>
+
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <Button android:id="@+id/button8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button android:id="@+id/button9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button android:id="@+id/button10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button android:id="@+id/button11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button android:id="@+id/button12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button android:id="@+id/button13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button android:id="@+id/button14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button android:id="@+id/button15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button android:id="@+id/button16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button android:id="@+id/button17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="bouton"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

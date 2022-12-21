@@ -166,5 +166,5 @@ private OnItemClickListener messageClickedHandler = new OnItemClickListener() {
 listView.setOnItemClickListener(messageClickedHandler);
 </pre>
 
-
-
+<h5>Phone screenshot</h5>
+<img src="screenshots/phone_screenshot.png" />
